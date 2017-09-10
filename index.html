@@ -153,12 +153,6 @@ Error message and password prompt
 
 <li>$:/plugins/inmysocks/DISQUS Comments</li>
 
-<li>$:/plugins/inmysocks/DISQUS Comments/DISQUS Comments</li>
-
-<li>$:/plugins/inmysocks/DISQUS Comments/DISQUS Reload Comments Macro</li>
-
-<li>$:/settings/DISQUS Comments</li>
-
 <li>$:/settings/DISQUS Settings</li>
 
 <li>$:/SiteSubtitle</li>
@@ -5728,48 +5722,6 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div caption="&lt;$reveal type='nomatch' state='$:/settings/DISQUS Settings!!sidebar_tab_name' text=''&gt;{{$:/settings/DISQUS Settings!!sidebar_tab_name}}&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/settings/DISQUS Settings!!sidebar_tab_name' text=''&gt;Comments&lt;/$reveal&gt;" created="20170910012606860" modified="20170910012606860" tags="$:/tags/SideBar" title="$:/plugins/inmysocks/DISQUS Comments/DISQUS Comments">
-<pre>&lt;div style='color:black'&gt;
-&lt;$reveal type='nomatch' state='$:/settings/DISQUS Comments!!current_comments' text=''&gt;
-Comments for {{$:/settings/DISQUS Comments!!current_comments}}
-
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;/$reveal&gt;
-&lt;$reveal type='match' state='$:/settings/DISQUS Comments!!current_comments' text=''&gt;
-Go to the tiddler you want to leave comments on and click the `(Re)load Comment Thread` button to load a comment thread.
-&lt;/$reveal&gt;
-&lt;/div&gt;</pre>
-</div>
-<div created="20170910010803557" modified="20170910012608585" tags="$:/tags/Macro" title="$:/plugins/inmysocks/DISQUS Comments/DISQUS Reload Comments Macro">
-<pre>\define MakeDisqusReloadButtonActionWidget()
-&lt;$action-reload-comments newid=&lt;&lt;currentTiddler&gt;&gt; permalink=&quot;&quot;&quot;$(SiteURL)$#!$(CurrentTiddler)$&quot;&quot;&quot; threadTitle=&lt;&lt;currentTiddler&gt;&gt; language={{$:/settings/DISQUS Comments!!language}}/&gt;
-\end
-
-\define ReloadDisqusComments()
-&lt;$button&gt;
-&lt;$reveal type='nomatch' state='$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings!!button_label' text=''&gt;{{$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings!!button_label}}&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings!!button_label' text=''&gt;(Re)load Comment Thread&lt;/$reveal&gt;
-
-&lt;$action-setfield $tiddler='$:/settings/DISQUS Comments' $field=current_comments $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
-&lt;$set name=CurrentTiddler value=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;$set name=SiteURL value={{$:/settings/DISQUS Settings!!site_url}}&gt;
-&lt;&lt;MakeDisqusReloadButtonActionWidget&gt;&gt;
-&lt;/$set&gt;
-&lt;/$set&gt;
-&lt;/$button&gt;
-&lt;$button class='tc-btn-invisible' popup='$:/state/Show DISQUS Comments Info'&gt;^^(?)^^&lt;/$button&gt;
-
-&lt;$reveal type='popup' state='$:/state/Show DISQUS Comments Info'&gt;
-&lt;div class='tc-drop-down' style='position:absolute'&gt;
-
-This button will reload the comment thread so that the comments for the current tiddler are displayed. The comment thread will open in the sidebar, so the sidebar has to be open.
-
-&lt;/div&gt;
-&lt;/$reveal&gt;
-\end</pre>
-</div>
-<div current_comments="Example tiddler thread 2" modified="20170910010831488" title="$:/settings/DISQUS Comments">
-<pre></pre>
-</div>
 <div created="20150622185842763" modified="20150622185848466" site_url="http://ooktech.com/jed/ExampleWikis/DISQUS Demo/" text_color="black" title="$:/settings/DISQUS Settings">
 <pre></pre>
 </div>
@@ -5785,10 +5737,10 @@ This button will reload the comment thread so that the comments for the current 
 <div modified="20150622182714661" title="$:/state/tab/moresidebar-401116514">
 <pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div modified="20170910012356221" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div modified="20150622191756979" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="" title="$:/StoryList">
+<div list="[[What is going on?]] [[Example tiddler thread 1]] [[Example tiddler thread 2]] [[Non-macro button examples]] [[$:/plugins/inmysocks/DISQUS Comments]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -5942,19 +5894,17 @@ This button will reload the comment thread so that the comments for the current 
     }
 }</pre>
 </div>
-<div created="20150622045532054" modified="20170910012321555" tags="" title="Example tiddler thread 1">
-<pre>&lt;$button&gt;Comment
-&lt;$action-reload-comments newid=&lt;&lt;currentTiddler&gt;&gt; permalink=&quot;&quot;&quot;$(SiteURL)$#!$(CurrentTiddler)$&quot;&quot;&quot; threadTitle=&lt;&lt;currentTiddler&gt;&gt; language={{$:/settings/DISQUS Comments!!language}}/&gt;
-&lt;/$button&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</pre>
+<div created="20150622045532054" modified="20150622173926656" tags="" title="Example tiddler thread 1">
+<pre>If you click the button below than comments for this tiddler should open in the sidebar
+
+&lt;&lt;ReloadDisqusComments&gt;&gt;</pre>
 </div>
-<div created="20150622173935588" modified="20170910012407131" tags="" title="Example tiddler thread 2">
-<pre>&lt;$button&gt;Comment
-&lt;$action-reload-comments newid=&lt;&lt;currentTiddler&gt;&gt; permalink=&quot;&quot;&quot;$(SiteURL)$#!$(CurrentTiddler)$&quot;&quot;&quot; threadTitle=&lt;&lt;currentTiddler&gt;&gt; language={{$:/settings/DISQUS Comments!!language}}/&gt;
-&lt;/$button&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</pre>
+<div created="20150622173935588" modified="20150622173940081" tags="" title="Example tiddler thread 2">
+<pre>If you click the button below than comments for this tiddler should open in the sidebar
+
+&lt;&lt;ReloadDisqusComments&gt;&gt;</pre>
 </div>
-<div created="20150622151359937" modified="20170910011009506" tags="" title="Non-macro button examples">
+<div created="20150622151359937" modified="20150622182742854" tags="" title="Non-macro button examples">
 <pre>&lt;$button&gt;Comment Thread Billy
 &lt;$action-reload-comments newid=billy permalink=&quot;http://ooktech.com/jed/ExampleWikis/DISQUS%20Demo/#!billy&quot; threadTitle='billy'/&gt;
 &lt;/$button&gt;
