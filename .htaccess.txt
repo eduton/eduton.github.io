@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?eduton.github.io [NC]
+RewriteRule \.(jpg|jpeg|png|gif|html)$ - [NC,F,L]
