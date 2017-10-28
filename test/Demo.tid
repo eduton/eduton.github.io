@@ -1,0 +1,41 @@
+created: 20171015143828278
+modified: 20171015144908506
+title: Demo
+
+This is a simple demo sending form data to a google forms url. On the google side it is set to put the responses into a spreadsheet. The link to the spreadsheet is below so you can see that your response was sent.
+
+The data tiddler is:
+
+<pre>
+<$view tiddler=DemoData field='text'/>
+</pre>
+
+The values of [[$:/temp/SendForm]] are (you can edit these):
+
+Name: <$edit-text tiddler='$:/temp/SendForm' field='name' class='tc-edit-texteditor'/>
+
+Other Name: <$edit-text tiddler='$:/temp/SendForm' field='other_name' class='tc-edit-texteditor'/>
+
+The url is: `https://docs.google.com/forms/d/e/1FAIpQLSeCx9J1cJLdIb_PEauF-9wkHS17rm4cJeuyHok5Se3XNLmvqg/formResponse`
+
+The widget call is:
+
+```
+<$button>
+    Submit Form Data
+    <$action-submitform
+    $url="https://docs.google.com/forms/d/e/1FAIpQLScguT35OREYr6bOq1bbgoDFWtNMhUfwU48sCGlQGg22xxQKpA/formResponse"
+    $tiddler=DemoData
+    />
+</$button>
+```
+
+<$button>
+    Submit Form Data
+    <$action-submitform
+    $url="https://docs.google.com/forms/d/e/1FAIpQLScguT35OREYr6bOq1bbgoDFWtNMhUfwU48sCGlQGg22xxQKpA/formResponse"
+    $tiddler=DemoData
+    />
+</$button>
+
+You can see the submitted responses here: https://docs.google.com/spreadsheets/d/1JxP9URaZB9OaKwAj_XH-_d35yMQEiIq6ujegu38PxkU/edit#gid=1014733696

@@ -1,0 +1,31 @@
+answer: 19000
+created: 20171004030640125
+method1: <$latex text="f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi" displayMode="true"></$latex>
+modified: 20171017104023497
+tags: clpercentages
+title: CL/Percentages/1
+
+''@@color:#4885ed;<$latex text="20\%"></$latex> of the population in a town are females. If there are <$latex text="72,000"></$latex> males, how many females are there? (Assuming only two genders)@@''
+
+<$tiddler tiddler="$:/temp/SendForm">
+
+:<$radio field="q1" value="17000"> <$latex text="17,000"></$latex></$radio>
+
+:<$radio field="q1" value="19000"> <$latex text="19,000"></$latex></$radio>
+
+:<$radio field="q1" value="18000"> <$latex text="18,000"></$latex></$radio>
+
+:<$radio field="q1" value="22500"> <$latex text="22,500"></$latex></$radio>
+
+</$tiddler>
+
+----
+
+
+
+<<check-quiz {{$:/temp/SendForm!!q1}} "18000" then:"''@@color:#35D035;Correct, you may check the solution below@@''" else:"''@@color:#ff0000;Sorry the answer is wrong. You can either try again or see the solution below@@''">>
+
+----
+
+<$details summary="Method 1" tiddler="solved">{{solved}}</$details>
+
